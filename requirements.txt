@@ -1,0 +1,6 @@
+allure-pytest
+pytest
+Appium-Python-Client
+requests
+pyyaml
+psutil

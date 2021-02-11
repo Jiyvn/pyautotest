@@ -1,0 +1,25 @@
+iOS:
+  automationName: XCUITest
+  startIWDP: true
+  newCommandTimeout: 3600
+  launchTimeout: 60000
+
+Android:
+  automationName: uiautomator2
+  newCommandTimeout: 3600
+  autoGrantPermissions: true
+  noReset: true
+
+Windows:
+  platformName: Windows
+  automationName: Windows
+
+Mac:
+  platformName: mac
+  automationName: mac2
+
+Chrome:
+  browserName: Chrome
+
+FireFox:
+  browserName: FireFox

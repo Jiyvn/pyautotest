@@ -1,0 +1,54 @@
+Default: Android
+iOS: iPhone7
+Android: XiaoMi 6
+Browser: Chrome88
+Windows: Win10
+Mac: Mac10.15
+
+
+Chrome88-win:
+  caps:
+    browserName: Chrome
+    version: null
+    platformName: Windows
+    platform: Windows
+  host: null
+
+Firefox86-linux:
+  caps:
+    browserName: Firefox
+    version: null
+    platformName: Linux
+    platform: Linux
+  host: null
+
+Win10:
+  caps:
+    deviceName: Win10
+    platformName: Windows
+    platformVersion: null
+  host: null
+
+Mac10.15:
+  caps:
+    deviceName: mac
+    platformName: Mac
+    platformVersion: null
+  host: null
+
+XiaoMi 6:
+  caps:
+    deviceName: XiaoMi 6
+    platformName: Android
+    platformVersion: '9'
+    udid: 28c87652
+  host: null
+
+iPhone7:
+  caps:
+    deviceName: iPhone7
+    platformName: iOS
+    platformVersion: 13.1.3
+    udid: 7524ead2a9a14eab947b648258ba4e02c5c12604
+  host: null
+
