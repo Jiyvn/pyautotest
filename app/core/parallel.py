@@ -11,7 +11,7 @@ from app.core.exceptions import ArgsError
 def run(method, args, amount=1):
     pool = None
     try:
-        if len(args) < 1:
+        if len(args) <= 1:
             method(*args[0])
         else:
             if platform.system().lower() != "windows":
