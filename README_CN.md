@@ -1,13 +1,13 @@
 ## pyautotest
 
-`pyautotest` supports UI/API automated testing.
+`pyautotest` 是一个pytest+allure的集成框架，支持UI/API自动化。
 
-English | [中文](/README_CN.md) 
+[English](/README.md) | 中文
 
-#### Get Start
+#### 开始
 
 ###### pyauto.py
-`pyautotest` supports multi-device concurrency. Just set all the tests in dict `tests`, notice that the device should be found in `device.yml`
+`pyautotest` 支持多设备并发. 在字典`tests`中设置测试设备和测试信息即可, 注意设备信息必须填写在`device.yml`。
 
 ```python
 from app.core.parallel import run
@@ -62,24 +62,24 @@ if __name__ == '__main__':
 
 ```
 
-###### commandline
+###### 命令行
 
-- `--test`:  test module
-- `--device`: test device
+- `--test`:  测试模块
+- `--device`: 测试设备
 
-`--test/--device` will directly replace `tests`, and just testing on `--device`. To change some info of device, use environment variable instead.
+`--test/--device` 选项会直接替换字典`tests`, 仅仅在`--device`上执行测试。如果需要修改部分设备信息，可以使用环境变量。
 ```bash
 python pyauto.py --test <module> --device <device>
 ```
 
-`--help` to show all `pyautotest` options. But `pyautotest` actually accepts all `pytest` arguments. check `pytest --help` for `pytest`.
+`--help`检查`pyautotest`的选项，但`pyautotest`实际上接受`pytest`的所有参数，可通过命令`pytest --help`查看。
 
 ```bash
 $python pyauto.py --help
 ```
 
 
-#### Dependencies
+#### 依赖
 
 - [pytest](https://github.com/pytest-dev/pytest)
 - [allure-pytest](https://github.com/allure-framework/allure-python/tree/master/allure-pytest)
@@ -91,8 +91,8 @@ $python pyauto.py --help
 
 ###### windows
 - [appium/appium-windows-driver](https://github.com/appium/appium-windows-driver)
-- [pywinauto/pywinauto](https://github.com/pywinauto/pywinauto) [optional]
-- [yinkaisheng/Python-UIAutomation-for-Windows](https://github.com/yinkaisheng/Python-UIAutomation-for-Windows) [optional]
+- [pywinauto/pywinauto](https://github.com/pywinauto/pywinauto) [可选]
+- [yinkaisheng/Python-UIAutomation-for-Windows](https://github.com/yinkaisheng/Python-UIAutomation-for-Windows) [可选]
 
 ###### macOS
 - [appium/appium-for-mac](https://github.com/appium/appium-for-mac)
@@ -100,8 +100,8 @@ $python pyauto.py --help
 - [appium/appium-mac2-driver [>=10.15]](https://github.com/appium/appium-mac2-driver)
 
 
-#### Other tools [optional]
-###### pytest
+#### 相关工具[可选]
+#### pytest
 - [pytest-bdd](https://github.com/pytest-dev/pytest-bdd)
 - [pytest-xdist](https://github.com/pytest-dev/pytest-xdist)
 - [pytest-cov](https://github.com/pytest-dev/pytest-cov)
@@ -109,12 +109,12 @@ $python pyauto.py --help
 - [pytest-django](https://github.com/pytest-dev/pytest-django)
 
 
-###### performance
+###### 性能
 - [locust](https://github.com/locustio/locust)
 - [jmeter](https://jmeter.apache.org/)
 
 
-####  Example
+####  示例
 ```python
 from app.core.drivers.mobile import Mobile
 
