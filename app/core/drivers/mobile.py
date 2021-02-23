@@ -27,8 +27,8 @@ class Mobile(Client):
             'left': self.swipe_left,
             'right': self.swipe_right,
         }
-        self.udid = self.devinfo.get('caps').get('udid')
-        self.host = self.devinfo.get('host')
+        self.udid = self.devinfo.get('caps').get('udid') if self.devinfo else None
+        self.host = self.devinfo.get('host') if self.devinfo else None
         self.cond = ec.visibility_of_element_located
 
     def set_caps(self, **kwargs):

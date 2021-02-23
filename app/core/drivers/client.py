@@ -17,7 +17,7 @@ class Client(Po):
     def __init__(self, devinfo=None):
         self.driver = None
         self.devinfo = devinfo
-        self.desired_caps = self.devinfo.get('caps')
+        self.desired_caps = self.devinfo.get('caps') if self.devinfo else {}
         super().__init__(self.driver)
 
     def alert(self):
@@ -121,23 +121,24 @@ class Client(Po):
                     self.driver = webdriver.Remote(self.devinfo['host'], self.desired_caps)
                 else:
                     self.desired_caps['wdaLocalPort'] = self.devinfo['bp']
-                    self.driver = webdriver.Remote("http://127.0.0.1:{}".format(self.devinfo['p']) + "/wd/hub", self.desired_caps)
+                    self.driver = webdriver.Remote("http://127.0.0.1:{}".format(self.devinfo['p']) + "/wd/hub",
+                                                   self.desired_caps)
             return self.driver
         except Exception as msg:
             raise ConnectionError(msg)
 
     def get(self, by, locator, condition=None, timeout=None, frequency=0.5):
         try:
-            self.Element = WebDriverWait(self.driver, timeout or self.TIMEOUT, frequency).until(
-                self._m2l_[condition or self.cond]((by, locator)))
+            self.Element = WebDriverWait(self.driver, timeout or self.Timeout, frequency).until(
+                (condition or self.cond)((by, locator)))
             return self.Element
         except TimeoutException:
             raise Exception("Element not found: {}, {}".format(by, locator))
 
     def find(self, by, locator, condition=None, timeout=None, frequency=0.5):
         try:
-            self.Element = WebDriverWait(self.driver, timeout or self.TIMEOUT, frequency).until(
-                condition or self._m2l_[self.cond]((by, locator)))
+            self.Element = WebDriverWait(self.driver, timeout or self.Timeout, frequency).until(
+                (condition or self.cond)((by, locator)))
             flag = True
         except TimeoutException:
             flag = False
@@ -145,8 +146,8 @@ class Client(Po):
 
     def wait_until_not(self, by, locator, condition=None, timeout=None, frequency=0.5):
         try:
-            WebDriverWait(self.driver, timeout or self.TIMEOUT, frequency).until_not(
-                self._m2l_[condition or self.cond]((by, locator)))
+            WebDriverWait(self.driver, timeout or self.Timeout, frequency).until_not(
+                (condition or self.cond)((by, locator)))
             flag = True
         except TimeoutException:
             flag = False

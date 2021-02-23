@@ -18,9 +18,9 @@ class MobileTest(unittest.TestCase):
                 'deviceName': 'LG_G6',
                 'devicePlatform': 'Android',
                 'platformVersion': '7.0',
-                'udid': 'VS988b3876fa0',
-                'appPackage': None,
-                'appActivity': None,
+                'udid': 'VS988b3876fa0',   # adb devices //android SDK
+                'appPackage': 'com.android.settings',
+                'appActivity': '.Settings',
 
             }
         }
@@ -30,7 +30,7 @@ class MobileTest(unittest.TestCase):
                 'platformName': 'iOS',
                 'platformVersion': '13.1.3',
                 'deviceName': 'iphone7',
-                'udid': '7524ead2a9a14eab947b648258ba4e02c5c12604',
+                'udid': '7524ead2a9a14eab947b648258ba4e02c5c12604',  # idevice_id -l  // brew install libimobiledevice –HEAD
                 'bundleId': 'com.apple.Preferences',
                 # 'startIWDP': True,
                 'launchTimeout': 60000,
