@@ -4,7 +4,6 @@ from datetime import datetime
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
-from .type import Boolean, Integer, IntFloat, String, Dict, Union
 
 
 class Proxy:

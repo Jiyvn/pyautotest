@@ -8,7 +8,7 @@ from app import Logger
 from app.cli import Parser, appOptions
 from app.core.communication import get_free_port
 from app.core.exceptions import ArgsError
-from app.utils.confile import reader
+from app.utils.ymljs import reader
 from constant import PROJ
 
 
@@ -171,7 +171,7 @@ class Pyauto(object):
                     d = self.device_config[d.lower().capitalize()]
         if not d:
             raise ArgsError(
-                'No device set to be testing! '
+                'No device set to test on! '
                 'set Default device in `device.yml` at least'
             )
         return d
