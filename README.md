@@ -2,6 +2,8 @@
 
 `pyautotest` supports UI/API automated testing.
 
+java implementation: [javautotest](https://github.com/Jiyvn/javautotest)
+
 English | [中文](/README_CN.md) 
 
 #### Get Start
